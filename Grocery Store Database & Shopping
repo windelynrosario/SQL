@@ -1,0 +1,26 @@
+--Create a grocey store database
+
+CREATE TABLE foods (id INTEGER PRIMARY KEY, food_type INTEGER, food TEXT, price INTEGER, want_or_need INTEGER);
+
+INSERT INTO foods VALUES (1, "Fruits", "Apple", 1, "W");
+INSERT INTO  foods VALUES (2, "Dairy", "Nutella", 6, "W");
+INSERT INTO foods VALUES (3, "Dairy", "Bread", 3, "N");
+INSERT INTO foods VALUES (4, "Dairy", "Eggs", 5, "N");
+INSERT INTO foods VALUES (5, "Dairy", "Milk", 3, "N");
+INSERT INTO foods VALUES (6, "Breakfast", "Cereal", 5, "N");
+INSERT INTO foods VALUES (7, "Dairy", "Butter", 4, "N");
+INSERT INTO foods VALUES (8, "Dairy", "Ice Cream", 7, "W");
+INSERT INTO foods VALUES (9, "Meat", "Steak", 13, "W");
+INSERT INTO foods VALUES (10, "Beverage", "Coffee", 5, "W");
+INSERT INTO foods VALUES (11, "Snacks", "Candy", 2, "W");
+INSERT INTO foods VALUES (12, "Meat", "Beef", 8, "W");
+INSERT INTO foods VALUES (13, "Meat", "Chicken", 6, "W");
+INSERT INTO foods VALUES (14, "Meat", "Pork", 7, "W");
+INSERT INTO foods VALUES (15, "Snacks", "Chips", 4, "W");
+
+--Display the database ordered by price.
+SELECT * FROM foods ORDER BY price;
+
+--Identify what foods are needed from the list.
+SELECT * FROM foods WHERE want_or_need IS "N";
+
