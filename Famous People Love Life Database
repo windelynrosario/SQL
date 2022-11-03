@@ -1,0 +1,51 @@
+--Create a famous people database
+
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY,
+fullname TEXT,
+birthdate TEXT);
+
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Shawn Mendes", "8-8-1998");
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Selena Gomez", "7-22-1992");
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Justin Bieber", "3-1-1994");
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Hailey Baldwin", "11-22-1996");
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Taylor Swift", "12-13-1989");
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Harry Styles", "12-1-1994");
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Olivia Rodrigo", "2-20-2003");
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Camila Cabello", "3-2-1997");
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Joshua Bassett", "12-22-2000");
+INSERT INTO famous_people (fullname, birthdate)
+VALUES ("Ariana Grande", "6-26-1993");
+
+--Create 2nd database showed who was involed with whom
+
+CREATE TABLE last_partner (id INTEGER PRIMARY KEY,
+name INTEGER,
+dated_or_married_to TEXT,
+partner INTEGER);
+
+INSERT INTO last_partner (name, dated_or_married_to, partner)
+VALUES (1, "dated", 8);
+INSERT INTO last_partner (name, dated_or_married_to, partner)
+VALUES (2, "dated", 3);
+INSERT INTO last_partner (name, dated_or_married_to, partner)
+VALUES (3, "married", 4);
+INSERT INTO last_partner (name, dated_or_married_to, partner)
+VALUES (4, "dated", 1);
+INSERT INTO last_partner (name, dated_or_married_to, partner)
+VALUES (5, "dated", 6);
+
+--Display which famous person was married/dated to whom while joining both tables
+SELECT a.fullname, last_partner.dated_or_married_to, b.fullname FROM last_partner
+JOIN famous_people a
+ON last_partner.id = a.id
+JOIN famous_people b
+ON last_partner.partner = b.id;
