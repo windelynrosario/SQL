@@ -1,0 +1,28 @@
+--Create database that might reflect an app I use (Twitter)
+CREATE TABLE tweets (id INTEGER PRIMARY KEY,
+user_id INTEGER,
+date TEXT,
+content TEXT);
+
+INSERT INTO tweets (user_id, date, content)
+VALUES (1, "5-5-2019", "While I was hanging with this guy, my friend was on the phone with me and him while he was drunk, and spilled the tea...");
+INSERT INTO tweets (user_id, date, content)
+VALUES (1, "5-10-2019", "I told him that though it is true - that I like him, we cant.. I'm just not ready");
+INSERT INTO tweets (user_id, date, content)
+VALUES (1, "5-15-2019", "Who am I kidding? No one completely heals and this guy is great.. We're OFFICIALLY together!! <3");
+
+
+--Display database showing tweets of one user
+SELECT * FROM tweets;
+
+--Update database to emulate what happens when data is edited in the app
+UPDATE tweets SET content = "This guy knows the tea cause my friend was on the phone with us, DRUNK!!!" WHERE id = 1;
+
+--Display updated database
+SELECT * FROM tweets;
+
+--Delete 3rd entry/tweet made by the same user
+DELETE FROM tweets WHERE id = 3;
+
+--Display database showing 3rd tweet was deleted
+SELECT * FROM tweets;
